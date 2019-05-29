@@ -73,4 +73,4 @@ For Tanzania, the average life expectancy is `r mean_lifeexp_tanz`, while the st
 ggplot(data = gapminder, mapping = aes(x = year, y = pop)) + geom_point()
 ```
 
-
+Here is some more text that I am adding.
