@@ -7,9 +7,7 @@ output:
     keep_md: true
 ---
 
-```{r global_options, echo=FALSE}
-knitr::opts_chunk$set(warning = FALSE, fig.path = "figs/")
-```
+
 
 
 # Heading
@@ -35,7 +33,8 @@ knitr::opts_chunk$set(warning = FALSE, fig.path = "figs/")
 
 ~~This was a bad item~~
 
-```{r load_data, results = "hide"}
+
+```r
 library("gapminder")
 library("ggplot2")
 suppressPackageStartupMessages(library(tidyverse))
@@ -44,35 +43,37 @@ head(gapminder)
 ```
 
 
-```{r gdp_lifeexp_plot, fig.width = 4, fig.height = 4}
+
+```r
 ggplot(data = gapminder, mapping = aes(x = gdpPercap, y = lifeExp)) + geom_point()
 ```
 
+![](figs/gdp_lifeexp_plot-1.png)<!-- -->
+
 Here, we see the plot for life expectancy as time progresses.
 
-```{r lifeexp_v_time}
+
+```r
 ggplot(data = gapminder, mapping = aes(x = year, y = lifeExp)) + geom_point()
 ```
 
-The largest population of any country in this data set is `r max(gapminder$pop)`.
+![](figs/lifeexp_v_time-1.png)<!-- -->
 
-```{r iceland, echo = FALSE}
-iceland = dplyr::filter(gapminder, country == "Iceland")
-max_iceland_lifeexp = max(iceland$lifeExp)
-```
+The largest population of any country in this data set is 1318683096.
 
-The maximum life expectancy in Iceland is `r max_iceland_lifeexp`.
 
-```{r tanzania, echo = FALSE}
-tanzania = dplyr::filter(gapminder, country == "Tanzania")
-mean_lifeexp_tanz = mean(tanzania$lifeExp)
-std_dev_lifeexp_tanz = sd(tanzania$lifeExp)
-```
 
-For Tanzania, the average life expectancy is `r mean_lifeexp_tanz`, while the standard deviation is `r std_dev_lifeexp_tanz`.
+The maximum life expectancy in Iceland is 81.757.
 
-```{r}
+
+
+For Tanzania, the average life expectancy is 47.9123333, while the standard deviation is 3.6024352.
+
+
+```r
 ggplot(data = gapminder, mapping = aes(x = year, y = pop)) + geom_point()
 ```
+
+![](figs/unnamed-chunk-1-1.png)<!-- -->
 
 Here is some more text that I am adding.
